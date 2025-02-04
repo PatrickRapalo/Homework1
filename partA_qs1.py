@@ -57,19 +57,23 @@ def main():
    ds = [43, 37, 50, 51, 58, 105, 52, 45, 45, 10]
    sorted_ds = sorted(ds)
 
+   # Question 1 Part A answers
+
    q1,q2,q3 = quartiles(sorted_ds)
    print(sorted_ds)
    print(f"Mean: {mean(sorted_ds)}")
    print(f"Median: {median(sorted_ds)}")
    print(f"Quartiles: Q1 = {q1}, Q2 = {q2} , Q3 = {q3}")
    print(f"Standard Deviation: {sd(sorted_ds)}")
-   
+
+   # Question 1 Part B/C
+
    ds_iqr = iqr_rule(sorted_ds,q1,q3)
-   irqQ1,iqrQ2,iqrQ3 = quartiles(ds_iqr)
+   iqrQ1,iqrQ2,iqrQ3 = quartiles(ds_iqr)
    print(f"After the 1.5IQR rule the data set is : {ds_iqr}")
    print(f"Mean: {mean(ds_iqr)}")
    print(f"Median: {median(ds_iqr)}")
-   print(f"Quartiles: Q1 = {irqQ1}, Q2 = {iqrQ2} , Q3 = {iqrQ3}")
+   print(f"Quartiles: Q1 = {iqrQ1}, Q2 = {iqrQ2} , Q3 = {iqrQ3}")
    print(f"Standard Deviation: {sd(ds_iqr)}")
 
 if __name__ == '__main__':
