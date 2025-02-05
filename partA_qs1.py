@@ -55,6 +55,9 @@ def iqr_rule(data_set,q1,q3):
            
 def main():
    ds = [43, 37, 50, 51, 58, 105, 52, 45, 45, 10]
+
+   #Sorting the data set for future use
+
    sorted_ds = sorted(ds)
 
    # Question 1 Part A answers
@@ -67,8 +70,9 @@ def main():
    print(f"Standard Deviation: {sd(sorted_ds)}")
 
    # Question 1 Part B/C
-
+   # Setting the new Data set to ds_iqr becasue of the post IQR rule
    ds_iqr = iqr_rule(sorted_ds,q1,q3)
+   
    iqrQ1,iqrQ2,iqrQ3 = quartiles(ds_iqr)
    print(f"After the 1.5IQR rule the data set is : {ds_iqr}")
    print(f"Mean: {mean(ds_iqr)}")

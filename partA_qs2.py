@@ -54,13 +54,13 @@ def main():
     }
     
     df = pd.DataFrame(data)
-    #time_series_population(df)
+    time_series_population(df)
 
     df_inrement_x = ten_year_increment_x(df)
-    #time_series_increment(df_inrement_x)
+    time_series_increment(df_inrement_x)
 
     df_increment_y = ten_year_increment_y(df)
-    #time_series_increment(df_increment_y)
+    time_series_increment(df_increment_y)
 
     print("Sample Analytics for increment of X: ")
     compute_sample_analytics(df_inrement_x)
