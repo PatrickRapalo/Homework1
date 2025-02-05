@@ -1,10 +1,14 @@
+####### FUNCTION BLOCK #######
+
+
 def mean(data_set):
+    n = len(data_set)
     total_sum = 0
     
     for x in data_set:
         total_sum += x
 
-    return total_sum / len(data_set)
+    return total_sum / n
 
 def median(data_set):
    n = len(data_set)
@@ -52,7 +56,9 @@ def iqr_rule(data_set,q1,q3):
            del data_set[x]
 
    return data_set
-           
+
+####### MAIN BLOCK #######
+
 def main():
    ds = [43, 37, 50, 51, 58, 105, 52, 45, 45, 10]
 

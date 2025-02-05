@@ -1,6 +1,9 @@
+####### IMPORT BLOCK #######
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
+####### FUNCTION BLOCK #######
 
 def time_series_population(df):
     plt.plot(df["year"],df["population"])
@@ -46,6 +49,9 @@ def compute_sample_analytics(df):
     print(f"Variance of Increments: {variance_increment}")
 
     return None
+
+
+####### MAIN BLOCK #######
 
 def main():
     data = {
