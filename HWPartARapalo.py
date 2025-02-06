@@ -116,19 +116,14 @@ def time_series_increment_y(df):
     plt.show()
 
 def ten_year_increment_x(df):
-    
     df["increment"] = df["population"].diff()
-
     df = df.dropna()
-    
     return df
 
 def ten_year_increment_y(df):
     increment = []
-
     for x in range(1,len(df["population"])):
         increment.append(round((df["population"][x] - df["population"][x-1]) / df["population"][x],3))
-
 
     df = df.drop(0)
     df ["increment"] = increment
@@ -159,14 +154,14 @@ def question2():
     df = pd.DataFrame(data)
     time_series_population(df)
 
-    df_inrement_x = ten_year_increment_x(df)
-    time_series_increment_x(df_inrement_x)
+    df_increment_x = ten_year_increment_x(df)
+    time_series_increment_x(df_increment_x)
 
     df_increment_y = ten_year_increment_y(df)
     time_series_increment_y(df_increment_y)
 
     print("Sample Analytics for increment of X: ")
-    compute_sample_analytics(df_inrement_x)
+    compute_sample_analytics(df_increment_x)
     print("")
     print("Sample Analytics for increment of Y: ")
     compute_sample_analytics(df_increment_y)
@@ -183,9 +178,6 @@ def iqr_rule2(q1,q3):
     print(lower_outlier, higher_outlier)
 
 def bxplot(data_set):
-
-    
-
     box_data = [[data_set["Min"],data_set["Q1"], data_set["Median"], data_set["Q3"], data_set["Max"]]]
 
     # Create the boxplot
@@ -201,7 +193,6 @@ def bxplot(data_set):
     plt.show()
     
 def question3():
-
     print("###### QUESTION 3 ######")
     print('')
 
@@ -229,7 +220,7 @@ def question3():
     create a box plot for Data Set A
     '''   
 
-    input("Press Eter for Boxplot")
+    input("Press Enter for Boxplot")
 
     bxplot(data_setA)
     print('')
@@ -253,6 +244,9 @@ def question4():
     ds = [56,52,13,34,33,18,44,41,48,75,24,19,35,27,46,62,71,24,66,94,40,18,15,39,53,23,41,78,15,35]
 
     histplot(ds)
+
+    print(f"Mean: {mean(ds)}")
+    print(f"Median: {median(ds)}")
 
 
 ####### MAIN BLOCK #######
